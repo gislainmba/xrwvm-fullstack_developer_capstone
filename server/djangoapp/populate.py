@@ -1,7 +1,7 @@
 from .models import CarMake, CarModel
 
 
-def  initiate():
+def initiate():
     car_make_data = [
         {"name": "NISSAN", "description": "Great cars. Japanese technology"},
         {"name": "Mercedes", "description": "Great cars. German technology"},
@@ -13,11 +13,15 @@ def  initiate():
     car_make_instances = []
     for data in car_make_data:
         car_make_instances.append(
-            CarMake.objects.create(name=data['name'], description=data['description']))
+            CarMake.objects.create(name=data['name'], 
+            description=data['description'])
+        )
 
     # Create CarModel instances with the corresponding CarMake instances
     car_model_data = [
-      {"name": "Pathfinder", "type": "SUV", "year": 2023, "car_make": car_make_instances[0]},
+      {"name": "Pathfinder", 
+        "type": "SUV", "year": 2023, 
+        "car_make": car_make_instances[0]},
       {"name": "Qashqai", "type": "SUV", "year": 2023, "car_make": car_make_instances[0]},
       {"name": "XTRAIL", "type": "SUV", "year": 2023, "car_make": car_make_instances[0]},
       {"name": "A-Class", "type": "SUV", "year": 2023, "car_make": car_make_instances[1]},
