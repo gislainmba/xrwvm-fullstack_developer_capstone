@@ -43,12 +43,10 @@ class CarModel(models.Model):
         choices=CAR_TYPES, default='SUV'
     )
     year = models.IntegerField(
-        default=2023,
-        validators=[MaxValueValidator(2023), 
+        default=2023, validators=[MaxValueValidator(2023),
         MinValueValidator(2015)]
     )
     # Other fields as needed
 
-
-    def __str__(self): 
+    def __str__(self):
         return self.name  # Return the name as the string representation
