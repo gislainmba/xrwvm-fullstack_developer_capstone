@@ -50,7 +50,7 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-   # context = {}
+    context = {}
 
     data = json.loads(request.body)
     username = data['userName']
@@ -145,7 +145,7 @@ def get_dealer_details(request, dealer_id):
 
 
 def add_review(request):
-    if (request.user.is_anonymous is False):
+    if (request.user.is_anonymous == False):
         data = json.loads(request.body)
         try:
         #    response = post_review(data)
