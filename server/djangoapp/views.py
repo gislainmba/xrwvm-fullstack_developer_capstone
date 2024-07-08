@@ -1,11 +1,11 @@
 # Uncomment the required imports before adding the code
 
-from django.shortcuts import render
+# from django.shortcuts import render
 # from django.http import HttpResponse
 # from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
-from django.contrib.auth import logout
+# from django.contrib.auth import logout
 # from django.contrib import messages
 # from datetime import datetime
 from .models import CarMake, CarModel
@@ -50,7 +50,7 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-   # context = {}
+    # context = {}
 
     data = json.loads(request.body)
     username = data['userName']
@@ -78,10 +78,10 @@ def registration(request):
                                         email=email)
         # Login the user and redirect to list page
         login(request, user)
-        data = {"userName":username, "status":"Authenticated"}
+        data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
-    else :
-        data = {"userName":username, "error":"Already Registered"}
+    else:
+        data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
 
@@ -148,7 +148,7 @@ def add_review(request):
     if (request.user.is_anonymous is False):
         # data = json.loads(request.body)
         try:
-        #   response = post_review(data)
+        # response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
             return JsonResponse(
